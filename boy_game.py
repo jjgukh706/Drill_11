@@ -135,7 +135,7 @@ class Boy:
                 self.x, self.y,
                 run_frame_width, run_frame_height)
         elif self.state == 'autorun':
-            # AutoRun: run 스프라이트를 확대(scale)해 표시, 진행 방향으로 반전
+            # AutoRun: run 스프라이트를 확대(scale)해 표시, 진행 방향으로 반전, y는 30만큼 올려서 그린다
             flip = 'h' if self.facing == -1 else ''
             draw_w = run_frame_width * self.scale
             draw_h = run_frame_height * self.scale
@@ -144,7 +144,7 @@ class Boy:
                 0,
                 run_frame_width, run_frame_height,
                 0, flip,
-                self.x, self.y,
+                self.x, self.y + 30,
                 draw_w, draw_h)
         elif self.state == 'sleep':
             flip = 'h' if self.facing == -1 else ''
