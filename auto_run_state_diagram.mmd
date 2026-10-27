@@ -1,0 +1,12 @@
+stateDiagram-v2
+    [*] --> idle
+    idle --> sleep : sleep (5s)
+    sleep --> idle : wake
+    idle --> run : run
+    sleep --> run : run
+    run --> idle : stop
+    idle --> autorun : a_key
+    sleep --> autorun : a_key
+    autorun --> idle : timeout (5s)
+    autorun --> run : arrow_key
+    autorun --> autorun : bounce (edge)
